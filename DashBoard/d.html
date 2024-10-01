@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"
+        type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"
+        type="text/javascript"></script>
+    <link rel="stylesheet" href="./index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #nav {
+            width: 100%;
+            height: 8vh;
+            /* border: 2px solid; */
+            display: flex;
+            position: relative;
+        }
+
+        #nav1 {
+            width: 75%;
+            /* border: 2px solid; */
+            height: inherit;
+        }
+
+        #nav2 {
+            width: 25%;
+            /* border: 2px solid; */
+            height: inherit;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #nav2 a {
+            color: brown;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, "poppins";
+        }
+
+        @media (max-width:550px) {
+            #nav2 {
+                flex-direction: column;
+            }
+
+            #nav2 a {
+                font-size: 0.8rem;
+            }
+        }
+
+        #main {
+            width: 100%;
+            height: 70vh;
+            /* border: 2px solid; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+
+        #register-form,
+        #login-form {
+            /* height: 30vh; */
+            width: 25%;
+            box-shadow: 2px 2px 5px grey;
+            padding: 20px;
+            display: flex;
+            gap: 25px;
+            flex-direction: column;
+            align-items: center;
+            /* background-color: rgb(233, 237, 210); */
+        }
+
+        #container input {
+            box-shadow: 2px 2px 10px grey;
+            width: 70%;
+            margin: auto;
+            height: 2em;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        #container input:focus {
+            outline: 2px solid cadetblue;
+        }
+
+        #container label {
+            width: 30%;
+        }
+
+        #container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #container #butt {
+            width: 100%;
+            padding: 10px;
+            /* color: rgb(229, 229, 229); */
+            /* background-color: coral; */
+            box-shadow: 2px 2px 4px cadetblue;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        #container #butt:hover {
+            transform: scale(1.02);
+            box-shadow: 2px 2px 5px cadetblue;
+        }
+
+        #user-profile:hover,
+        #delete-account:hover {
+            transform: scale(1.02);
+            color: blue;
+            cursor: pointer;
+        }
+
+        .nav1 {
+            width: 100%;
+            height: 8vh;
+            /* border: 2px solid; */
+            background-color: aliceblue;
+            position: fixed;
+            z-index: 111;
+            top: 0%;
+            /* border-bottom: 2px solid rgb(154, 154, 228); */
+            box-shadow: 3px 3px 5px azure;
+        }
+
+        .nav2 {
+            width: 80%;
+            height: inherit;
+            margin: auto;
+            /* border: 2px solid; */
+            /* padding: 15px 20px; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            /* background-color: navajowhite; */
+        }
+
+        .nav2 span {
+            color: rgb(100, 10, 300);
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+
+        }
+
+        .nav2 span:hover {
+            transform: scale(1.1);
+            text-decoration: underline;
+        }
+
+        #usermenu div:hover {
+            transform: scale(1.02);
+            color: rgb(12, 138, 142);
+            cursor: pointer;
+        }
+
+        #userprofile,
+        #logout {
+            padding: 10px 20px;
+            border: none;
+            background-color: cadetblue;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+            color: whitesmoke;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <div id="nav1"></div>
+        <div id="nav2">
+            <a id="register-butt" href="#register">Register</a>
+            <a id="login-butt" href="#login">Login</a>
+        </div>
+    </div>
+    <div id="main">
+
+    </div>
+
+    <!-- register template  -->
+    <script type="text/template" id="register-temp">
+        <form action="" id="register-form" method="post">
+            <div id="container">
+                <h1 style="text-align:center">Register</h1>
+            </div>
+            <div id="container">
+                <label for="username">Username : </label>
+                <input type="text" id="username"><br>
+            </div>
+            <div id="container">
+                <label for="email">Email : </label>
+                <input type="email" id="email"><br>
+            </div>
+            <div id="container">
+                <label for="password">Password : </label>
+                <input type="password" id="password"><br>
+            </div>
+            <!-- <div>
+                <p>Already existing user <a id=login-butt href="/login">Login</a></p>
+            </div> -->
+            
+            <div id="container">
+                <button id="butt">Register</button>
+            </div>
+            <div id="container">
+                <p id="data1"></p>
+            </div>
+        </form>
+    </script>
+
+    <!-- login template  -->
+    <script type="text/template" id="login-temp">
+        <form action="" id="login-form" method="post">
+            <div id="container">
+                <h1 style="text-align:center">Login</h1>
+            </div>
+            <div id="container">
+                <label for="email">Email : </label>
+                <input type="email" id="email">
+            </div>
+            <div id="container">
+                <label for="password">Password : </label>
+                <input type="password" id="password">
+            </div>
+            <!-- <div>
+                <p>New user <a href="">Register</a></p>
+            </div> -->
+
+            <div id="container">
+                <button id="butt">Login</button>
+            </div>
+            <div id="container">
+                <p id="data2"></p>
+            </div>
+        </form>
+    </script>
+
+    <!-- dashboard template  -->
+    <script type="text/template" id="dashboard-temp">
+        <div class="nav1">
+            <div class="nav2">
+                <div style="display: flex;align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="ani" style="cursor: pointer;color:orangered;" width="50"
+                        height="30" fill="currentColor" class="bi bi-ubuntu" viewBox="0 0 16 16">
+                        <path
+                            d="M2.273 9.53a2.273 2.273 0 1 0 0-4.546 2.273 2.273 0 0 0 0 4.547Zm9.467-4.984a2.273 2.273 0 1 0 0-4.546 2.273 2.273 0 0 0 0 4.546M7.4 13.108a5.54 5.54 0 0 1-3.775-2.88 3.27 3.27 0 0 1-1.944.24 7.4 7.4 0 0 0 5.328 4.465c.53.113 1.072.169 1.614.166a3.25 3.25 0 0 1-.666-1.9 6 6 0 0 1-.557-.091m3.828 2.285a2.273 2.273 0 1 0 0-4.546 2.273 2.273 0 0 0 0 4.546m3.163-3.108a7.44 7.44 0 0 0 .373-8.726 3.3 3.3 0 0 1-1.278 1.498 5.57 5.57 0 0 1-.183 5.535 3.26 3.26 0 0 1 1.088 1.693M2.098 3.998a3.3 3.3 0 0 1 1.897.486 5.54 5.54 0 0 1 4.464-2.388c.037-.67.277-1.313.69-1.843a7.47 7.47 0 0 0-7.051 3.745" />
+                    </svg><span
+                        style="font-size: 1.8rem;color: rgb(200, 8, 8);font-family: cursive;text-decoration: none;font-style:oblique;">V3</span>
+                </div>
+                <div>
+                    <button id="userprofile">User Profile</button>
+                    <button id=logout>Logout</button>
+                </div>
+            </div>
+        </div>
+        <div id="main" style="border:2px solid;height:80vh">
+            <div id="main1" style="width:100%; display:flex;align-items:center;justify-content:center;flex-direction:column;">
+                <table style=";background-color:#fff;border-collapse:collapse;width:70%">
+                    <thead style="background-color:cadetblue;color:#fff">
+                        <th style="text-align:left;padding:8px">Id</th>
+                        <th style="text-align:left;padding:8px">Username</th>
+                        <th style="text-align:left;padding:8px">Email</th>
+                        <th style="text-align:left;padding:8px">Created At</th>
+                        <th style="text-align:left;padding:8px">Actions</th>
+                    </thead>
+                    <tbody id="tab" style="">
+
+                    </tbody>
+                </table>
+
+                  </div>
+            </div>
+        </div>
+        <script>
+            let logout = $('#logout')
+            logout.click(function (e) {
+            console.log('hello');
+
+            e.preventDefault()
+            history.replaceState(null, null, '#login');
+            r.navigate("login", { trigger: true,replace:true })
+            localStorage.clear()
+            sessionStorage.clear()
+            window.location.reload()
+            })
+
+            $('#userprofile').click(function(e){
+                e.preventDefault()
+                console.log('hello');
+
+                let email1 = localStorage.getItem('email')
+                let details = { email: email1 }
+                let userprofile = document.getElementById('main1')
+                let table = document.getElementById('tab')
+                // userprofile.innerHTML = ""
+                table.innerHTML = ""
+                $.ajax({
+                    url: `http://localhost:9000/getDetails?email=` + email1,
+                    type: 'GET',
+                    success: function (res) {
+                        console.log(res);
+                        let data = JSON.parse(res)
+                       console.log(data.username);
+                       
+                        // console.log(userprofile);
+
+                        table.innerHTML += `
+                            <tr>
+                                <td style="text-align:left;padding:8px">${data.id}</td>    
+                                <td style="text-align:left;padding:8px">${data.username}</td>    
+                                <td id="editmail" style="text-align:left;padding:8px">${data.email}</td>    
+                                <td style="text-align:left;padding:8px">${data.createdAt}</td>    
+                                <td style="text-align:left;padding:8px"><button id="edit-btn" style="background-color:blue;color:#fff;padding:8px 15px;border:none;box-shadow:1px 1px 1px grey;border-radius:4px" >Edit</button>
+                                    <button id="update-btn" style="background-color:blue;color:#fff;padding:8px 15px;border:none;box-shadow:1px 1px 1px grey;border-radius:4px" >Update</button></td>
+                            </tr>
+                        `
+                        
+                        $('#edit-btn').click(function(e){
+                            e.preventDefault()
+                            $('#editmail').html("")
+                            $('#editmail').append('<input type="email" id="updatedEmail" required>')
+                        })
+
+                        $('#update-btn').click(function(e){
+                            e.preventDefault()
+                            let updatedEmail =  $("#updatedEmail").val()
+                            console.log(updatedEmail);
+                            
+                            let id=data.id
+                            console.log(id);
+                            let details={
+                                    "id":id,
+                                    "email":updatedEmail
+                                }
+
+                                $.ajax({
+                                url: `http://localhost:9000/updateDetails`,
+                                type:'PUT',
+                                contentType:'application/JSON',
+                                data: JSON.stringify(details),
+                                success: function(res){
+                                    console.log(res);
+                                    history.replaceState(null, null, '#login');
+                                    r.navigate("login", { trigger: true ,replace:true})
+                                    localStorage.clear()
+                                    sessionStorage.clear()
+                                    window.location.reload()
+                                },
+                                error: function(error){
+                                    console.log(error);
+                                },
+                            })
+                        })
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                })
+            })
+        </script>
+
+    </script>
+
+    <!-- <script type="text/template" id="userprofile-temp">
+        <div id="userprofile-adder">
+
+        </div>
+    </script> -->
+
+    <script>
+
+
+
+        //register
+        let register = Backbone.View.extend({
+            el: '#main',
+            events: {
+                'submit #register-form': 'handleSubmit'
+            },
+            template: _.template($('#register-temp').text()),
+            initialize: function () { this.render() },
+            render: function () {
+                this.$el.html(this.template())
+            },
+            handleSubmit: function (e) {
+                e.preventDefault();
+                let myUserModel = Backbone.Model.extend();
+                let myData = new myUserModel();
+
+                let username = $('#username').val()
+                let email = $('#email').val()
+                let password = $('#password').val()
+                console.log(username, email, password);
+
+                let userDetails = {
+                    "username": username,
+                    "email": email,
+                    "password": password
+                }
+
+                myData.save(userDetails, {
+                    url: "http://localhost:9000/register",
+                    type: "POST",
+                    success: function (success, response) {
+                        // console.log("data saved successfully", model.toJSON());
+                        console.log(success);
+                        console.log(response.responseText);
+                        // console.log(response);
+
+                        // console.log(model.changed);
+                        $("#username").val("");
+                        $("#email").val("");
+                        $("#password").val("");
+                    },
+                    error: function (error, response) {
+                        console.log("error", error);
+                        console.log(response.responseText);
+                        let str = response.responseText
+                        document.getElementById('data1').innerHTML = ""
+                        if (str.includes("successfull")) {
+                            $('#data1').append(response.responseText);
+                            $('#data1').css("color", "green");
+                        } else {
+                            $('#data1').append(response.responseText);
+                            $('#data1').css("color", "red");
+                            // document.getElementById("login-form").reset()
+                        }
+                    },
+                });
+            }
+        })
+
+        //login
+        let login = Backbone.View.extend({
+            el: '#main',
+            events: {
+                'submit #login-form': 'handleSubmit'
+            },
+            template: _.template($('#login-temp').text()),
+            initialize: function () { this.render() },
+            render: function () {
+                this.$el.html(this.template())
+            },
+            handleSubmit: function (e) {
+                e.preventDefault();
+                let myUserModel = Backbone.Model.extend();
+                let myData = new myUserModel();
+
+                let email = $('#email').val()
+                let password = $('#password').val()
+                console.log(email, password);
+
+                let userDetails = {
+                    "email": email,
+                    "password": password
+                }
+
+                myData.save(userDetails, {
+                    url: "http://localhost:9000/login",
+                    type: "POST",
+                    success: function (success) {
+                        // alert(model.toJSON().message)
+                        // console.log("data saved successfully", model.toJSON());
+                        // console.log(model.changed);
+                        console.log(success);
+
+                        $("#email").val("");
+                        $("#password").val("");
+                    },
+                    error: function (error, response) {
+                        console.log("error", error);
+                        console.log(response);
+
+                        // alert(response.responseText)
+                        console.log(response.responseText);
+                        let str = response.responseText
+                        document.getElementById('data2').innerHTML = ""
+                        if (str.includes("Successfull")) {
+                            localStorage.setItem("email", email)
+                            $('#data2').append(response.responseText);
+                            $('#data2').css("color", "green");
+                            r.navigate("dashboard", { trigger: true })
+                        } else {
+                            $('#data2').append(response.responseText);
+                            $('#data2').css("color", "red");
+                        }
+
+                    },
+
+                });
+            }
+        })
+
+        //dashboard
+
+        let dashboard = Backbone.View.extend({
+            el: $('body'),
+            // events: {
+            //     'submit #register-form': 'handleSubmit'
+            // },
+            template: _.template($('#dashboard-temp').text()),
+            initialize: function () { this.render() },
+            render: function () {
+                this.$el.html(this.template())
+            },
+
+        })
+
+        //userprofile
+
+        let userprofile = Backbone.View.extend({
+            el: $('#main'),
+            events: {
+                'click #userprofile': 'fetchUserInfo'
+            },
+            template: _.template($('#userprofile-temp').text()),
+            initialize: function () {
+                this.render()
+            },
+            render: function () {
+                this.$el.html(this.template())
+            },
+            fetchUserInfo: function (e) {
+                let email1 = localStorage.getItem('email')
+                let details = { email: email1 }
+                e.preventDefault()
+                console.log('hello');
+
+                e.preventDefault()
+                $.ajax({
+                    url: `http://localhost:9000/getDetails?email=` + email1,
+                    type: 'GET',
+                    success: function (res) {
+                        console.log(res);
+                        console.log("it's success");
+                    },
+                    error: function (error) {
+                        console.log(error);
+
+                    }
+
+                })
+
+            }
+        })
+
+
+
+
+        //router
+        let rout = Backbone.Router.extend({
+            routes: {
+                "register": "showView1",
+                "login": "showView2",
+                "dashboard": "showView3",
+            },
+            showView1: function () {
+                new register();
+            },
+            showView2: function () {
+                new login();
+            },
+            showView3: function () {
+                new dashboard();
+            },
+        })
+
+        let r = new rout()
+
+        Backbone.history.start()
+
+        $('#register-butt').click(function () {
+            r.navigate("register", { trigger: true })
+        })
+
+        $('#login-butt').click(function () {
+            r.navigate("login", { trigger: true })
+        })
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Navigation</title>
+    <!-- FontAwesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #section1 {
+        display: flex;
+        width:66%;
+        height: 70vh;
+        position :fixed;
+      
+        border-radius: 5px;
+      }
+      
+      #first {
+        /* background-color: white; */
+        /* background-color: blue; */
+        width: 30%;
+        height:70vh;
+        background-color:white;
+        position: relative;
+        border-radius: 5px;
+    
+        /* border: 2px solid black; */
+       
+        
+        
+      }
+      #second {
+        border-radius: 5px;
+        /* background-color: blue; */
+        width: 70%;
+        height:70vh;
+        /* border: 2px solid black; */
+        /* padding: 10px;
+        border-radius: 7px;
+        margin-bottom: 5px; */
+        background-color: white;
+        position: relative;
+      }
+    
+      #r{
+       padding: 7px;
+
+      }
+      #showpro,#vd,#help,#acu{
+        color:#2c7be5;
+        text-decoration: none;
+      }
+      #showpro:hover,#vd:hover,#help:hover,#acu:hover
+      {
+        text-decoration: underline;
+      }
+      #searchcont{
+        border-top:1px solid grey ;
+        width:99%;
+        height: 5vh;
+        bottom:0;
+        position: absolute;
+        background-color: white;
+        margin-bottom: 2px;
+        
+      }
+      #typemsgrelated{
+        margin-bottom: 2px;
+        border-top:1px solid grey ;
+        width:99%;
+        height: 5vh;
+        bottom:0;
+        position: absolute;
+        background-color: white;
+      }
+      #typemsgrelated input{
+        border:none;
+        outline: none;
+        color: #c0b8b8;
+
+      }
+      #searcont1 {
+        /* border-top: 1px solid black; */
+        height:5vh;
+        /* border: 2px solid black; */
+        display: flex;
+           justify-content: center;
+           align-items: center;
+
+        }
+
+      #searcont1 input {
+        width: 88%;
+        border:none;
+        outline: none;
+       font-size: 14px;
+      }
+
+      #searcont1 input::placeholder , #typemsgrelated input::placeholder{
+      color: #ccc;
+      }
+
+      #searcont1 i,#sendrelatedicons {
+      font-size: 16px;
+      color: #c0b8b8;
+      }
+     .chatfont{
+        font-size: 9px;
+      }     
+      tr:hover{
+        cursor: pointer;
+      }
+      #btn{
+        padding: 8px;
+        font-size: medium;
+        border:none;
+        border-radius: 5px;
+      
+        color:#0477be;
+        background-color:whitesmoke;
+      }
+      #mc{
+        font-size: 12px;
+        padding: 3px;
+        background-color: #e7ebee;
+        border-radius: 5px;
+      }
+      #mc2{
+        font-size: 12px;
+        padding: 3px;
+       margin-right: 5px;
+        background-color: #319aea;
+        border-radius: 5px;
+      }
+      @media screen and (max-width: 1100px) {
+        .search-bar{
+            display: none;
+        }
+      }
+    
+      @media screen and (max-width: 1050px) {
+        #first{
+          display: none;
+        }
+        #second{ 
+          width: 96%;
+        }
+      
+      } 
+      /* table {
+        border: none;
+      } */
+
+    </style>
+  </head>
+  <body>
+    <div class="toggle-button" id="toggle-button">
+      &#9776;
+      <!-- Hamburger icon -->
+    </div>
+
+    <div class="container">
+      <nav id="navbar">
+        <ul class="nav-links" id="nav-links">
+          <li>
+            <a href="index.html"
+              ><i class="fa-regular fa-calendar-days"></i><span>Home</span></a
+            >
+          </li>
+          <li>
+            <a href="chat2.html"><i class="fas fa-comments"></i></i><span>Chat</span></a>
+          </li>
+          <li>
+            <a href="social.html"><i class="fa-solid fa-share-nodes"></i><span>Social</span></a>
+          </li>
+          <li>
+            <a href="ecommerce2.html"><i class="fa-solid fa-cart-shopping"></i><span>Contact</span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="top-nav">
+        <div class="logo-container">
+          <img
+            src="https://prium.github.io/falcon/v3.22.0/assets/img/icons/spot-illustrations/falcon.png"
+            alt="Falcon Logo"
+          />
+          <h1 style ="color: #2c7be5; font-size: 20px;font-weight: 800;">falcon</h1>
+        </div>
+
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search..." />
+        </div>
+
+        <div class="top-nav-icons">
+          <i class="fas fa-sun"></i>
+          
+          <i class="fas fa-shopping-cart"></i>
+         
+          <i class="fas fa-bell"></i>
+          
+           <span>
+          <a class="nav-link fa-icon-wait nine-dots p-1" id="navbarDropdownMenu" role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="43" viewBox="0 0 16 16" fill="none">
+            <circle cx="2" cy="2" r="2" fill="#6C6E71"></circle>
+            <circle cx="2" cy="8" r="2" fill="#6C6E71"></circle>
+            <circle cx="2" cy="14" r="2" fill="#6C6E71"></circle>
+            <circle cx="8" cy="8" r="2" fill="#6C6E71"></circle>
+            <circle cx="8" cy="14" r="2" fill="#6C6E71"></circle>
+            <circle cx="14" cy="8" r="2" fill="#6C6E71"></circle>
+            <circle cx="14" cy="14" r="2" fill="#6C6E71"></circle>
+            <circle cx="8" cy="2" r="2" fill="#6C6E71"></circle>
+            <circle cx="14" cy="2" r="2" fill="#6C6E71"></circle>
+          </svg></a>
+        </span>
+         
+           &nbsp; &nbsp; &nbsp;
+          <div class="profile-img"></div>
+          
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="main-content">
+        <div id="section1" style="float: left;">
+          <div id="first">
+            <div id="chatpeople" style="overflow: auto; text-wrap: wrap; height: 64vh;">
+              <table width="100%" >
+                <tr align="left" "  >
+                    <td width="20%"><img src="images/p1.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                    <td  width="70% ""><h5>Antony Hopkins</h5>
+                        <p class="chatfont">Antony sent 6 photos</p>
+                      </td>
+                </tr>
+                
+                <tr align="left" id="greenbord">
+                    <td id="greenbord" width="20%"><img src="images/p2.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                    <td  width="70% ""><h5>Avengers</h5>
+                    <p class="chatfont">Bucky: @Emma What do you</p>
+                  </td>
+                </tr>
+                <tr align="left" >
+                    <td width="20%"><img src="images/p3.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                    <td  width="70% ""><h5>Emma Watson</h5>
+                    <p class="chatfont">You: 🙂</p>
+                  </td>
+                </tr>
+                <tr align="left">
+                    <td width="20%"><img src="images/p4.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                    <td  width="70% ""><h5>Anna Karinina</h5>
+                    <p class="chatfont">What are you doing?</p>
+                  </td>
+                </tr>
+                 <tr align="left"></tr>
+                    <td width="20%"><img src="images/p5.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                    <td  width="70% ""><h5>John Lee</h5>
+                     <p class="chatfont">How are you?</p>
+                    </td>
+                </tr> 
+                <tr align="left">
+                  <td width="20%"><img src="images/p1.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                  <td  width="70% ""><h5>Emma Watson</h5>
+                  <p class="chatfont">You: 🙂</p>
+                </td>
+                </tr>
+              </tr>
+              <tr align="left">
+                  <td width="20%"><img src="images/p2.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                  <td  width="70% ""><h5>Antony Hopkins</h5>
+                   <p class="chatfont">What are you doing?</p>
+                  </td>
+              </tr>
+              <tr align="left">
+                  <td width="20%"><img src="images/p3.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                  <td  width="70% ""><h5>Emma Watson</h5>
+                  <p class="chatfont">What are you doing?</p>
+                  </td>
+              </tr>
+              <tr align="left">
+                  <td width="20%"><img src="images/p4.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                  <td  width="70% ""><h5>John Lee</h5>
+                    <p class="chatfont">Bucky: @Emma What do you</p>
+              </tr>
+               <tr align="left"></tr>
+                  <td width="20%"><img src="images/p5.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                  <td  width="70% ""><h5>Rowen Atkinson</h5>
+                    <h6>Admin</h6></td>
+              </tr> 
+              <tr align="left">
+                <td width="20%"><img src="images/p1.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                <td  width="70% ""><h5>Emma Watson</h5>
+                  <p class="chatfont">Bucky: @Emma What do you</p>
+            </tr>
+            <tr align="left">
+                <td width="20%"><img src="images/p2.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                <td  width="70% ""><h5>Antony Hopkins</h5>
+                  <p class="chatfont">You: 🙂</p>
+                    </td>
+            </tr>
+            <tr align="left">
+              <td  width="20%"><img src="images/p4.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+              <td  width="70% ""><h5>John Lee</h5>
+                <p class="chatfont">You: 🙂</p>
+              </td>
+            </tr>
+            </table>
+            </div>
+            
+            <div id="searchcont">
+                <div id="searcont1">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search Contacts..." />
+                </div>
+            </div>
+          </div>
+          <div id="second" ">
+            <div id="activeperson" style="display: flex; justify-content: space-between; padding: 10px;" >
+              <div id="personname">
+                <h3> John Lee</h3>
+                <p class="chatfont">Active on Chat</p>
+              </div>
+              <div id="callrelatedlogo" style="padding-top: 1%;">
+                <span id="btn"><i class="fa-solid fa-phone"></i></span>
+                <span id="btn"><i class="fa-solid fa-video"></i></span>
+                <span id="btn"><i class="fa-solid fa-info"></i></span>
+              </div>
+            </div>
+            <hr>
+            <div id="realchat" style="overflow: auto; text-wrap: wrap; height: 54vh;">
+             <center>
+             <p class="chatfont" > May 6, 2019, 11:54 am</p>
+            </center>
+             <div id="chatdetail" height="50px" style="display: flex; justify-content: flex-start; align-items: center; padding: 2px;">
+              <div id="chatphoto">
+                <img src="images/p3.jpg" alt="" width="28px" height="28px" style="border-radius: 50%; padding: 2px;">
+              </div>
+              <div id="chatcontent">
+                <p id="mc">How are you?</p>
+                <p class="chatfont" style="text-align: left;">11:54 am</p>
+              </div>
+              <br>
+              
+             </div>
+             <div id="chatcontent2"  style="display: flex; justify-content: end;">
+              <div id="mc2" >Fine</div>
+             </div>
+             <div class="chatfont"  style="text-align: right; padding-right:5px ;">11:54 am</div>
+             
+             
+              <div id="chatdetail" height="50px" style="display: flex; justify-content: flex-start; align-items: center; padding: 2px;">
+               <div id="chatphoto">
+                 <img src="images/p3.jpg" alt="" width="28px" height="28px" style="border-radius: 50%; padding: 2px;">
+               </div>
+               <div id="chatcontent">
+                 <p id="mc">Yes, in an organization stature, this is a must, in my opinion..</p>
+                 <p class="chatfont" style="text-align: left;">11:54 am</p>
+               </div>
+               <br>
+               
+              </div>
+              <div id="chatcontent2"  style="display: flex; justify-content: end;">
+               <div id="mc2" >kk</div>
+              </div>
+              <div class="chatfont"  style="text-align: right; padding-right:5px ;">11:56 am</div>
+
+             
+                <div id="chatdetail" height="50px" style="display: flex; justify-content: flex-start; align-items: center; padding: 2px;">
+                 <div id="chatphoto">
+                   <img src="images/p3.jpg" alt="" width="28px" height="28px" style="border-radius: 50%; padding: 2px;">
+                 </div>
+                 <div id="chatcontent">
+                   <p id="mc">What are you doing?</p>
+                   <p class="chatfont" style="text-align: left;">11:58 am</p>
+                 </div>
+                 <br>
+                 
+                </div>
+                <div id="chatcontent2"  style="display: flex; justify-content: end;">
+                 <div id="mc2" >Nothing</div>
+                </div>
+                <div class="chatfont"  style="text-align: right; padding-right:5px ;">11:59 am</div>
+
+                
+                  <div id="chatdetail" height="50px" style="display: flex; justify-content: flex-start; align-items: center; padding: 2px;">
+                   <div id="chatphoto">
+                     <img src="images/p3.jpg" alt="" width="28px" height="28px" style="border-radius: 50%; padding: 2px;">
+                   </div>
+                   <div id="chatcontent">
+                     <p id="mc">I took some excellent images yesterday</p>
+                     <p class="chatfont" style="text-align: left;">12:00 pm</p>
+                   </div>
+                   <br>
+                   
+                  </div>
+                  <div id="chatcontent2"  style="display: flex; justify-content: end;">
+                   <div id="mc2" >Give me the images</div>
+                  </div>
+                  <div class="chatfont"  style="text-align: right; padding-right:5px ;">12:54 pm</div>
+             
+            
+             
+            </div>
+          
+
+            <div id="typemsgrelated"  style="display: flex; justify-content: space-between; align-items: center;">
+              <div id="typeinput">
+                   <input type="text" placeholder="Type your message" />
+              </div>
+              <div id="sendrelatedicons">
+                <span><i class="fa-solid fa-paperclip"></i></span>&nbsp;
+                <span><i class="fa-regular fa-face-smile"></i></span>&nbsp;
+                <span>Send</span>
+
+              </div>
+            </div>
+            
+          </div>
+
+    
+        </div> 
+
+        
+        </div>
+        
+       
+      </div>
+     
+      
+    
+   
+
+    <script src="script.js"></script>
+  </body>
+</html>

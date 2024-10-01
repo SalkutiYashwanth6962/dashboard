@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Web Design with Flexbox</title>
+    <style>
+      /* Basic reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      /* Container that holds all the content */
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        background-color: #f4f4f4;
+        padding: 20px;
+        border-radius: 5px;
+        flex: 1;
+        min-width: 250px;
+      }
+
+      /* Main Content */
+      .main-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        flex: 3;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        min-width: 300px;
+      }
+
+      /* Media query for devices with max-width 768px (tablets and phones) */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+      }
+
+      /* Responsive image */
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      /* Typography */
+      h1,
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <h2>Sidebar</h2>
+        <p>
+          This is the sidebar content. It is displayed on the left side of the
+          page on larger screens, and at the top on smaller screens.
+        </p>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <h1>Main Content</h1>
+        <p>
+          This is the main content area of the page. It takes up more space than
+          the sidebar and contains the primary information.
+        </p>
+
+        <h2>Responsive Image</h2>
+        <p>The image below will scale according to the width of the screen:</p>
+        <img src="https://via.placeholder.com/600x400" alt="Sample Image" />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE >
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://underscorejs.org/underscore.js"></script>
+    <script src="http://backbonejs.org/backbone.js"></script>
+    <script src="https://raw.github.com/boazsender/backbone.routefilter/master/dist/backbone.routefilter.js"></script>
+    <script>
+      jQuery(function ($) {
+        // Set up a a Router.
+        var Router = Backbone.Router.extend({
+          routes: {
+            "": "index",
+            "page/:id": "page",
+          },
+          before: function (route) {
+            // Do something with every route before it's routed. "route" is a string
+            // containing the route fragment just like regular Backbone route
+            // handlers. If the url has more fragments, the before callback will
+            // also get them, eg: before: function( frag1, frag2, frag3 )
+            // (just like regular Backbone route handlers).
+            if (route === "foo") {
+              console.log("The before filter ran and the route was foo!");
+            }
+
+            // Returning false from inside of the before filter will prevent the
+            // current route's callback from running, and will prevent the after
+            // filter's callback from running.
+          },
+          after: {
+            // define a specific callback for a certain route.
+            "page/:id": function (route) {
+              console.log("After callback for page/:id was run!");
+            },
+          },
+          index: function () {
+            // Do what ever you would normally do inside of a route handler.
+            console.log("navigated to index.");
+          },
+          page: function (route) {
+            // Do what ever you would normally do inside of a route handler.
+            console.log("navigated to page and the route was: " + route + ".");
+          },
+        });
+
+        // Instantiate the Router.
+        var router = new Router();
+
+        // Start the history.
+        Backbone.history.start();
+
+        // Navigate to a page. (Open your console to see what's happening.)
+        router.navigate("page/foo", true);
+
+        // Override the before filter on the fly.
+        router.before = function (route) {
+          if (route === "bar") {
+            // return false to stop ecexution of the callback for this route,
+            // and the after callback if we navigate to page/bar.
+            console.log(
+              "We navigated to another page, but the page callback and after filter did not run because we returned false from inside the before filter"
+            );
+            return false;
+          }
+        };
+
+        // Navigate to a place that our before filter is written to handle.
+        router.navigate("page/bar", true);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

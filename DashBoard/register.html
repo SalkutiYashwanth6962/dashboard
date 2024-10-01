@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      #container1 {
+        height: 100vh;
+        background-color: #aae0f1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #regform1 {
+        width: 23%;
+        border-radius: 10px;
+        background-color: #f8f8f9;
+        padding: 30px 50px;
+      }
+      #regbtn {
+        /* background-color: #0d6efd; */
+        background-color: #08c3fc;
+        color: white;
+        border: 1px solid #08c3fc;
+        border-radius: 5px;
+        padding: 5px 10px;
+        height: 2.5em;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 700;
+      }
+      input {
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #aae0f1;
+        width: 97%;
+        height: 2em;
+        margin: 5px;
+        padding: 5px;
+      }
+      a {
+        text-decoration: none;
+        color: #07bff7;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      @media screen and (min-width: 1400px) {
+        input {
+          width: 97%;
+          height: 2.5em;
+          margin: 5px;
+          padding: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <div id="container1">
+      <div id="regform1">
+        <form id="myform">
+          <h2>Registration Form</h2>
+
+          <input
+            type="text"
+            name="uname"
+            id="uname"
+            placeholder="UserName"
+          /><br /><br />
+
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Email"
+          /><br /><br />
+
+          <input
+            type="text"
+            name="password"
+            id="password"
+            placeholder="Password"
+          /><br /><br />
+
+          <input
+            type="text"
+            name="phoneno"
+            id="phoneno"
+            placeholder="Phone Number"
+          />
+          <p>If already an existing user <a href="login.html">Login</a></p>
+          <center>
+            <button type="submit" id="regbtn">Register</button>
+          </center>
+        </form>
+      </div>
+    </div>
+    <script>
+      $("#myform").submit(function (e) {
+        e.preventDefault();
+        let formData = {
+          userName: $("#uname").val(),
+          email: $("#email").val(),
+          password: $("#password").val(),
+          phoneNumber: $("#phoneno").val(),
+        };
+        $.ajax({
+          data: JSON.stringify(formData),
+          method: "post",
+          contentType: "application/json",
+          url: "http://localhost:8090/registeruser",
+          success: function (result) {
+            if (result === "success") {
+              alert("user registered successfully..");
+            } else {
+              alert("error while registering user...");
+            }
+          },
+          error: function (error) {
+            console.log("error while registering the user:" + error);
+            alert("some thing went wrong");
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

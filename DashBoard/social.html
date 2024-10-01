@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Navigation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #section1 {
+
+        width:100%;
+        background-color:rgba(237, 242, 249, 0.96);
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      #first {
+        /* background-color: white; */
+        /* background-color: blue; */
+        width: 65%;
+     
+        background-color:rgba(237, 242, 249, 0.96);  
+        border-radius: 5px;  
+      }
+      #second {
+        border-radius: 5px;
+        background-color:rgba(237, 242, 249, 0.96);
+        width: 34%;
+    
+        /* padding: 10px;
+        border-radius: 7px;
+        margin-bottom: 5px; */
+        /* background-color: white; */ 
+      }
+      #hash{
+        border-top: 1px solid rgb(223, 221, 221);
+        border-bottom: 1px solid rgb(223, 221, 221);
+      }
+      #createpost1{
+        border-bottom: 1px solid rgb(223, 221, 221);
+      }
+      
+      #font{
+        font-size: 13px;
+      }
+      #bwfont{
+        font-size: 12px;
+        
+      }
+      #bwfont1{
+        font-size: 10px;
+        
+      }
+      #imgrow1 img, #imgrow2 img{
+       border-radius: 5px;
+      }
+      #birthdaywishes,#addtoyourfeed{
+        background-color:white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-bottom: 7px;
+      }
+      /* #addtoyourfeed{
+        
+      } */
+       #atyfhead{
+        padding: 3px;
+        background-color: rgba(242, 247, 252, 0.96);
+       }
+
+      .gift{
+        color: orange;
+        width: 16px;
+      
+      }
+      a{
+        text-decoration: none;
+        color:rgba(44,123,229,1) ;
+      }
+      a:hover{
+        text-decoration: underline;
+      }
+      #followrelated{
+        font-size: 8px;
+        border: 1px solid rgb(194, 192, 192);
+        padding: 1px 7px;
+        border-radius: 2px;
+
+      }
+      .namewithfollowbtn{
+        width: 100%;
+        border-bottom: 1px dashed  rgb(194, 192, 192);
+        padding-bottom: 5px;;
+        
+      }
+      .c1{
+        color: grey;
+      }
+      #calendar{
+        border: 1.5px solid rgb(243, 7, 7);
+        width: 40px;
+        border-radius: 4px;
+      }
+      #month{
+        text-align: center;
+        color: white;
+        font-weight: 400;
+        background-color: rgb(243, 7, 7) ;
+        width:100%;
+      }
+      #date{
+        text-align: center;
+        color: rgb(179, 174, 174);
+        font-size: 20px;
+        font-weight: 900;
+       
+        width:100%;
+      }
+      #likescomments{
+        background-color: rgb(248, 248, 248);
+        width: 100%;
+        
+      }
+      #lc1{
+        padding: 5px;
+      }
+      #lcicons{
+        padding: 5px 0px;
+        border-top: 1px solid rgb(236, 232, 232);
+        border-bottom: 1px solid  rgb(236, 232, 232);
+      }
+      #lcicons img{
+        width: 15px;
+      }
+      #lcicons a{
+        margin-right: 20px;
+      }
+       #wacmt input{
+          border: 2px solid  rgb(231, 229, 229);
+          outline: none;
+          font-size: 14px;
+       }
+       #wacmt input::placeholder{
+          color:  rgb(181, 177, 177);
+       }
+      @media screen and (max-width: 1100px) {
+        .search-bar{
+            display: none;
+        }
+      }
+      @media screen and (max-width: 1050px) {
+        #second{
+          display: none;
+        }
+        #first{ 
+          width: 96%;
+        }
+        .search-bar{
+            display: none;
+         }
+      } 
+      /* table {
+        border: none;
+      } */
+
+    </style>
+  </head>
+  <body>
+    <div class="toggle-button" id="toggle-button">
+      &#9776;
+      <!-- Hamburger icon -->
+    </div>
+
+    <div class="container">
+      <nav id="navbar">
+        <ul class="nav-links" id="nav-links">
+          <li>
+            <a href="index.html"
+              ><i class="fa-regular fa-calendar-days"></i><span>Home</span></a
+            >
+          </li>
+          <li>
+            <a href="chat2.html"><i class="fas fa-comments"></i></i><span>Chat</span></a>
+          </li>
+          <li>
+            <a href="social.html"><i class="fa-solid fa-share-nodes"></i><span>Social</span></a>
+          </li>
+          <li>
+            <a href="ecommerce2.html"><i class="fa-solid fa-cart-shopping"></i><span>Contact</span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="top-nav">
+        <div class="logo-container">
+          <img
+            src="https://prium.github.io/falcon/v3.22.0/assets/img/icons/spot-illustrations/falcon.png"
+            alt="Falcon Logo"
+          />
+          <h1 style ="color: #2c7be5; font-size: 20px;font-weight: 800;">falcon</h1>
+        </div>
+
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search..." />
+        </div>
+
+        <div class="top-nav-icons">
+          <i class="fas fa-sun"></i>
+          
+          <i class="fas fa-shopping-cart"></i>
+         
+          <i class="fas fa-bell"></i>
+          
+           <span>
+          <a class="nav-link fa-icon-wait nine-dots p-1" id="navbarDropdownMenu" role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="43" viewBox="0 0 16 16" fill="none">
+            <circle cx="2" cy="2" r="2" fill="#6C6E71"></circle>
+            <circle cx="2" cy="8" r="2" fill="#6C6E71"></circle>
+            <circle cx="2" cy="14" r="2" fill="#6C6E71"></circle>
+            <circle cx="8" cy="8" r="2" fill="#6C6E71"></circle>
+            <circle cx="8" cy="14" r="2" fill="#6C6E71"></circle>
+            <circle cx="14" cy="8" r="2" fill="#6C6E71"></circle>
+            <circle cx="14" cy="14" r="2" fill="#6C6E71"></circle>
+            <circle cx="8" cy="2" r="2" fill="#6C6E71"></circle>
+            <circle cx="14" cy="2" r="2" fill="#6C6E71"></circle>
+          </svg></a>
+        </span>
+         
+           &nbsp; &nbsp; &nbsp;
+          <div class="profile-img"></div>
+          
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+     <div class="main-content">
+        <div id="section1" ">
+          <div id="first">
+           <div id="createpost" style=" width: 96%; background-color: white; height:190px ; border-radius: 10px; padding: 10px; margin-bottom: 5px;">
+               <div id="createpost1" style="display: flex;justify-content: start; width: 100%; background-color: rgba(242, 247, 252, 0.96); height:40px ; ">
+               <div> <img src="images/p3.jpg" alt="" width="30px" height="30px" style="border-radius: 50%; padding: 5px; "></div>
+               <div><h4 style=" padding-top: 10px;">Create post</h4></div>
+               </div>
+           
+               <div >
+                <textarea name="" id="" rows="4" style="width: 100%;  outline:none; border:none;" placeholder=" What do you want to talk about?" ></textarea>
+               </div>
+              
+               <div style="padding: 2.5px;" id="hash">
+                <label for="">+ Add hashtag</label>
+                <input type="text" placeholder="Help the right person to see" size="50%" style="outline: none; border: none;">
+               </div>
+               
+               <div id="sharedetails" width="100%" height="40px" style="display: flex; justify-content: space-between; padding: 10px;">
+                <div id="imageevent" style=" display: flex;justify-content: space-between; align-items: center; font-size: 12px; width:50%;">
+                    <div>
+                        <img src="images/image.svg" alt="" width="17px">
+                        <span>Image</span>
+                    </div>
+                    <div>
+                        <img src="images/calendar.svg" alt="" width="17px">
+                        <span>Event</span>
+                    </div>
+                    <div>
+                        <img src="images/location.svg" alt=" " width="17px">
+                        <span>Check In</span>
+                    </div>
+                    
+                    
+                </div>
+                <div id="share"  >
+                    <div style="padding: 4px;  background-color: #1b69ee;color: white;" >Share</div>
+                    
+              
+                </div>
+               </div>
+           </div>
+
+           <div id="sharedalbum" style=" width: 96%; background-color: white;border-radius: 10px; padding: 10px;">
+            <div id="createpost1" style="display: flex;justify-content: start; width: 100%; background-color: rgba(242, 247, 252, 0.96); height:40px ; ">
+                <div> <img src="images/p2.jpg" alt="" width="30px" height="30px" style="border-radius: 50%; padding: 5px; "></div>
+                <div ><h5 style=" padding-top: 10px;"> <a href="">Rowan Atkinson </a> shared an <a href="">album</a></h5>
+                    <p id="bwfont">11hrs Consett,UK</p>
+                </div>
+              
+            </div>
+            <br>
+            <div id="photocontainer">
+                <p id="font">
+                    Rowan Sebastian Atkinson CBE is an English actor, comedian and screenwriter best known for his work on the sitcoms Blackadder and Mr. Bean.
+                </p>
+                <br>
+                <div id="imgrow1" style=" display: flex;
+                justify-content: space-between;padding-bottom: 10px;
+                ">
+                  <img src="images/p11.jpg" alt="" width="49%">
+                  <img src="images/p12.jpg" alt=""width="49%">
+                </div>
+                 <div id="imgrow2"  style=" display: flex;
+                 justify-content: space-between;padding-bottom: 10px;
+                 ">
+                  <img src="images/p21.jpg" alt="" width="32.2%">
+                  <img src="images/p22.jpg" alt=""width="32.2%">
+                  <img src="images/p23.jpg" alt=""width="32.2%">
+                </div>
+             </div>
+                <br>
+                <div id="likescomments">
+                  <div id="lc1">
+                    <p style="font-size: 15px;">345 Likes • 34 Comments</p>
+                  </div>
+                  <div id="lcicons" style="display: flex; align-items: center;justify-content: left;">
+                    <span><img src="images/like-active.png" alt=""> <a href="">Like</a></span>
+                    <span><img src="images/comment-active.png" alt=""> <a href="">Comment</a></span>
+                    <span><img src="images/share-inactive.png" alt=""> <a href="">Share</a></span>
+                  </div>
+                  <div id="writeacomment"  style="display: flex; align-items: center;justify-content: left;padding: 5px; width:100%;">
+                    <div style=" padding-right: 10px;" width="10%">
+                      <img src="images/p3.jpg" alt="" style="width:35px;border-radius: 50%;">
+                    </div>
+                    <div id="wacmt" style="width: 85%;  ">
+                      <input type="text" style="width: 100%; height: 30px;border-radius: 100px;"   placeholder=" Write a comment....">
+                    </div>
+                  </div>
+                  <div id="writeacomment"  style="display: flex; justify-content: left;padding: 5px; width:100%;">
+                    <div style=" padding-right: 10px;" width="10%">
+                      <img src="images/p2.jpg" alt="" style="width:35px;border-radius: 50%;">
+                    </div>
+                    <div id="wacmt" style="width: 85%;  ">
+                     <p id="bwfont" style="background-color: rgb(238, 245, 245); padding: 5px;"> <a href="">Rowan Atkinson</a> She starred as Jane Porter in The <a href="">@Legend of Tarzan (2016)</a>, Tanya Vanderpoel in Whiskey Tango Foxtrot (2016) and as DC comics villain Harley Quinn in Suicide Squad (2016), for which she was nominated for a Teen Choice Award, and many other awards.</p>
+                     <div id="likereplytime" id="bwfont">
+                      <span id="bwfont"><a href="">Like</a></span>
+                      <span id="bwfont"><a href=""> • Reply • </a></span>
+                      <span id="bwfont">23min</span>
+                    </div>
+                    </div>
+                    
+                  </div>
+                  <div id="writeacomment"  style="display: flex; justify-content: left;padding: 5px; width:100%;">
+                    <div style=" padding-right: 10px;" width="10%">
+                      <img src="images/p3.jpg" alt="" style="width:35px;border-radius: 50%;">
+                    </div>
+                    <div id="wacmt" style="width: 85%;  ">
+                     <p id="bwfont" style="background-color: rgb(238, 245, 245); padding: 5px;"> <a href="">Jessalyn Gilsig </a>Jessalyn Sarah Gilsig is a Canadian-American actress known for her roles in television series, e.g., as Lauren Davis in Boston Public, Gina Russo in Nip/Tuck, Terri Schuester in Glee, and as Siggy Haraldson on the History Channel series Vikings. 🏆</p>
+                     <div id="likereplytime" id="bwfont">
+                      <span id="bwfont"><a href="">Like</a></span>
+                      <span id="bwfont"><a href=""> • Reply • </a></span>
+                      <span id="bwfont">3hrs</span>
+                    </div>
+                    </div>
+                    
+                  </div>
+                  <p id="bwfont">Load more comments (2 of 34)</p>
+                 
+                                 
+                 </div>
+               
+
+            </div>
+          
+              
+
+           </div>
+           <div id="second" ">
+            <div id="birthdaywishes">
+              <svg class="gift" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gift" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M32 448c0 17.7 14.3 32 32 32h160V320H32v128zm256 32h160c17.7 0 32-14.3 32-32V320H288v160zm192-320h-42.1c6.2-12.1 10.1-25.5 10.1-40 0-48.5-39.5-88-88-88-41.6 0-68.5 21.3-103 68.3-34.5-47-61.4-68.3-103-68.3-48.5 0-88 39.5-88 88 0 14.5 3.8 27.9 10.1 40H32c-17.7 0-32 14.3-32 32v80c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16v-80c0-17.7-14.3-32-32-32zm-326.1 0c-22.1 0-40-17.9-40-40s17.9-40 40-40c19.9 0 34.6 3.3 86.1 80h-86.1zm206.1 0h-86.1c51.4-76.5 65.7-80 86.1-80 22.1 0 40 17.9 40 40s-17.9 40-40 40z"></path></svg>
+             <span id="bwfont"> <a href="" style="text-decoration: none;color: rgba(44,123,229,1);">Emma Watson</a> 's Birthday is today</span> 
+            </div>
+            <div id="addtoyourfeed">
+             <div id="atyfhead" style="display: flex; justify-content: space-between;">
+              <div id="addtoyourfeedtext">
+                <h4>Add to your feed</h4>
+              </div>
+              <div id="seeall">
+                <a href="" >See all</a>
+              </div>
+             </div>
+             <div id="feedpeople">
+              <div class="people" style="display: flex; justify-content: left; ">
+                <div class="photo">
+                  <img src="images/f1.jpg" alt="" width="40px" style="border-radius: 50%; margin-right: 8px;">
+
+                </div>
+                <div class="namewithfollowbtn">
+                  <p> <a href="" id="bwfont">Katheryn Winnick</a> </p>
+                  <span id="followrelated"><i class="fa-solid fa-user-plus"></i> &nbsp;Follow</span>
+              
+                  
+                </div>
+              </div>
+              <div class="people" style="display: flex; justify-content: left; ">
+                <div class="photo">
+                  <img src="images/f2.jpg" alt="" width="40px" style="border-radius: 50%; margin-right: 8px;">
+
+                </div>
+                <div class="namewithfollowbtn">
+                  <p> <a href="" id="bwfont">Travis Fimmel</a> </p>
+                  <p  id="bwfont1">5 mutual connections</p>
+                  <span id="followrelated"><i class="fa-solid fa-user-plus"></i> &nbsp;Follow</span>
+                  
+                </div>
+              </div>
+              <div class="people" style="display: flex; justify-content: left; ">
+                <div class="photo">
+                  <img src="images/f3.jpg" alt="" width="40px" style="border-radius: 50%; margin-right: 8px;">
+
+                </div>
+                <div class="namewithfollowbtn">
+                  <p> <a href="" id="bwfont">
+                    Gustaf Skarsgård</a> </p>
+                  <p  id="bwfont1">5 mutual connections</p>
+                  <span id="followrelated"><i class="fa-solid fa-user-plus"></i> &nbsp;Follow</span>
+                </div>
+              </div>
+              <div class="people" style="display: flex; justify-content: left; ">
+                <div class="photo">
+                  <img src="images/f4.jpg" alt="" width="40px" style="border-radius: 50%; margin-right: 8px;">
+
+                </div>
+                <div class="namewithfollowbtn">
+                  <p> <a href="" id="bwfont">Clive Standen</a> </p>
+                  <p  id="bwfont1">5 mutual connections</p>
+                  <span id="followrelated"><i class="fa-solid fa-user-plus"></i> &nbsp;Follow</span>
+                </div>
+              </div>
+              <div class="people" style="display: flex; justify-content: left; ">
+                <div class="photo">
+                  <img src="images/f5.jpg" alt="" width="40px" style="border-radius: 50%; margin-right: 8px;">
+
+                </div>
+                <div class="namewithfollowbtn">
+                  <p> <a href="" id="bwfont">Jennie Jacques</a> </p>
+                  <p  id="bwfont1">5 mutual connections</p>
+                  <span id="followrelated"><i class="fa-solid fa-user-plus"></i> &nbsp;Follow</span>
+                </div>
+              </div>
+              <div class="people" style="display: flex; justify-content: left; ">
+                <div class="photo">
+                  <img src="images/f6.jpg" alt="" width="40px" style="border-radius: 50%; margin-right: 8px;">
+
+                </div>
+                <div class="namewithfollowbtn">
+                  <p> <a href="" id="bwfont">
+                    Isaac Hempstead</a> </p>
+                  <span id="followrelated"><i class="fa-solid fa-user-plus"></i> &nbsp;Follow</span>
+                </div>
+              </div>
+              <div class="people" style="display: flex; justify-content: left; ">
+                <div class="photo">
+                  <img src="images/f7.jpg" alt="" width="40px" style="border-radius: 50%; margin-right: 8px;">
+
+                </div>
+                <div class="namewithfollowbtn">
+                  <p> <a href="" id="bwfont">Antony Hopkins</a> </p>
+                  <span id="followrelated"><i class="fa-solid fa-user-plus"></i> &nbsp;Follow</span>
+                </div>
+              </div>
+              <div class="people" style="display: flex; justify-content: left; ">
+                <div class="photo">
+                  <img src="images/p3.jpg" alt="" width="40px" style="border-radius: 50%; margin-right: 8px;">
+
+                </div>
+                <div class="namewithfollowbtn">
+                  <p> <a href="" id="bwfont">Sophie Turner</a> </p>
+                  <span id="followrelated"><i class="fa-solid fa-user-plus"></i> &nbsp;Follow</span>
+                </div>
+              </div>
+             </div>
+            </div>
+            <!-- you may interested page -->
+            <div id="addtoyourfeed">
+              <div id="atyfhead" >
+               <div id="addtoyourfeedtext">
+                 <h4>You may interested</h4>
+               </div>
+              </div>
+              <div id="youmayinterest">
+               <div class="events" style="display: flex; justify-content: left; ">
+                 <div class="cal">
+                   <div id="calendar" style="display: flex; justify-content: center; flex-direction: column;  margin-right: 8px;">
+                    <div id="month">Feb</div>
+                    <div id="date">21</div>
+                   </div>
+                   <!-- <img src="images/f1.jpg" alt="" width="40px" style="border-radius: 50%; margin-right: 8px;"> -->
+ 
+                 </div>
+                 <div class="namewithfollowbtn">
+                   <p> <a href="" id="bwfont">Newmarket Nights</a> </p>
+                   <p id="bwfont" class="c1">Organized by University of Oxford</p>
+                   <p id="bwfont">Time: 6:00AM <br>
+                    Duration: 6:00AM - 5:00PM</p>
+                   <p id="bwfont" class="c1">Place: Cambridge Boat Club, Cambridge</p>
+                 </div>
+               </div>
+               <div class="events" style="display: flex; justify-content: left; ">
+                <div class="cal">
+                  <div id="calendar" style="display: flex; justify-content: center; flex-direction: column;  margin-right: 8px;">
+                   <div id="month">Dec</div>
+                   <div id="date">31</div>
+                  </div>
+                  <!-- <img src="images/f1.jpg" alt="" width="40px" style="border-radius: 50%; margin-right: 8px;"> -->
+
+                </div>
+                <div class="namewithfollowbtn">
+                  <p> <a href="" id="bwfont">31st Night Celebration</a> </p>
+                  <p id="bwfont" class="c1">Organized by University of Oxford</p>
+                  <p id="bwfont">Time: 6:00AM <br>
+                   Duration: 6:00AM - 5:00PM</p>
+                  <p id="bwfont" class="c1">Place: Cambridge Boat Club, Cambridge</p>
+                </div>
+              </div>
+              <div class="events" style="display: flex; justify-content: left; ">
+                <div class="cal">
+                  <div id="calendar" style="display: flex; justify-content: center; flex-direction: column;  margin-right: 8px;">
+                   <div id="month">Dec</div>
+                   <div id="date">16</div>
+                  </div>
+                  <!-- <img src="images/f1.jpg" alt="" width="40px" style="border-radius: 50%; margin-right: 8px;"> -->
+
+                </div>
+                <div class="namewithfollowbtn">
+                  <p> <a href="" id="bwfont">Folk Festival</a> </p>
+                  <p id="bwfont" class="c1">Organized by University of Oxford</p>
+                  <p id="bwfont">Time: 6:00AM <br>
+                   Duration: 6:00AM - 5:00PM</p>
+                  <p id="bwfont" class="c1">Place: Cambridge Boat Club, Cambridge</p>
+                </div>
+              </div>
+              <div id="allevent" style=" border-top: 1px solid rgb(205, 202, 202); padding: 2px; background-color:rgba(242, 247, 252, 0.96) ;">
+                <center>
+                  <a href="">All Events &nbsp;></a>
+                </center>
+                
+              </div>
+              
+               
+              
+ 
+              </div>
+             </div>
+             <!--end-->
+
+
+
+
+
+
+
+          
+           </div>
+
+
+          </div>
+       
+
+    
+        </div> 
+
+        
+     </div>
+        
+       
+      </div>
+     
+      
+    
+   
+
+    <script src="script.js"></script>
+  </body>
+</html>

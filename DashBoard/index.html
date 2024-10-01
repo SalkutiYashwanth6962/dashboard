@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Navigation</title>
+    <!-- FontAwesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #section1 {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      #section2{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      
+      /* width:100%;
+      height:270px; */
+
+      }
+      #section4{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      
+      width:100%;
+  
+    }
+      #section5 {
+      
+        width:98%;
+     
+   
+       
+        /* background-color:white;
+        border-radius: 7px;
+        margin-bottom: 5px; */
+       
+      }
+      #first {
+        background-color: white;
+        /* background-color: blue; */
+        width: 48%;
+        /* border: 2px solid black; */
+        padding: 5px;
+        border-radius: 7px;
+        margin-bottom: 1.2%;
+      }
+      #second {
+        /* background-color: blue; */
+        width: 48%;
+        /* border: 2px solid black; */
+        padding: 5px;
+        border-radius: 7px;
+        margin-bottom: 1.2%;
+        background-color: white;
+      }
+      #third {
+        /* background-color: rgb(0, 183, 255); */
+        background-color: white;
+        width:  48%;
+        /* border: 2px solid black; */
+        padding: 5px;
+        border-radius: 7px;
+        margin-bottom: 1.2%;
+      }
+      #fourth {
+        /* background-color: rgb(0, 183, 255); */
+        background-color: white;
+        width:  48%;
+        /* box-shadow: 2px  2px grey; */
+        /* border: 2px solid black; */
+        padding: 5px;
+        border-radius: 7px;
+        margin-bottom: 1.2%;
+      }
+      #row {
+        width: 100%;
+        height: 80px;
+        /* background-color: aqua; */
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .greenbutton {
+        margin-top: 300px;
+        background-color: forestgreen;
+        padding: 3px;
+        border-radius: 100px;
+      }
+      .bluebutton {
+        margin-top: 300px;
+        background-color:#EDF2F9;
+        padding: 3px;
+        border-radius: 100px;
+        color:#2c7BE5
+      }
+      .round{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        width:25px;
+        height: 25px;
+        
+        border-radius: 100%;
+        /* background-color: aqua; */
+        float:left;
+      }
+      #f1{
+        color: rgb(10, 62, 83);
+        background-color: rgb(20, 145, 194);
+        
+      }
+      #r1{
+        color: rgb(24, 134, 21);
+        background-color: rgb(52, 228, 111);
+      }
+      #b1{
+        color: rgb(81, 131, 151);
+       background-color: skyblue;
+
+      }
+      #r2{
+       color: rgb(150, 84, 3);
+       background-color:  darkorange;
+      }
+      #s1{
+       color: darkred;
+       background-color: red;
+      }
+      #blueanime{
+        background-color: #EDF2F9;
+        padding: 3px;
+        border-radius: 80px;
+        font-size: small;
+        color:#2c7BE5;
+        margin-left: 3px;
+        font-weight: bolder;
+
+      }
+      #runningpro1, #totalsales2{
+        height:auto;
+        width: 48%;
+        background-color:white;
+        padding: 5px;
+        border-radius: 7px;
+        margin-bottom: 1.2%;
+        position: relative;
+
+      }
+      #s52{
+        padding: 5px;
+        width: 99%;
+        background-color:white;
+        border-radius: 7px;
+        margin-bottom: 1.2%;
+      }
+      /* #totalsales2{
+        padding: 5px;
+        width: 47%;
+        background-color:white;
+        height:270px;
+        border-radius: 7px;
+        margin-bottom: 5px;
+      } */
+      #activeusers,#bandwidth{
+        padding:5px;
+        width: 48%;
+        background-color:white;
+        position: relative;
+        border-radius: 7px;
+        margin-bottom: 1.2%;
+      }
+      #bottom1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        bottom: 1px;
+        position:absolute;
+        background-color: #F9FAFD;
+        width: 95%;
+      }
+      #bottom2{
+        
+        padding: 5px;
+        bottom: 1px;
+        position:absolute;
+        background-color: #F9FAFD;
+        width: 95%;
+      }
+    
+
+      #r{
+       padding: 7px;
+
+      }
+      #showpro,#vd,#help,#acu,#allact{
+        color:#2c7be5;
+        text-decoration: none;
+      }
+      #showpro:hover,#vd:hover,#help:hover,#acu:hover
+      {
+        text-decoration: underline;
+      }
+      @media screen and (max-width: 900px) {
+        #first,
+        #second,
+        #third,#fourth, #runningpro1,#totalsales2 ,#activeusers,#bandwidth,#s52{
+          /* background-color: blue; */
+          width: 96%;
+        
+        }
+        .search-bar{
+            display: none;
+        }
+      }
+      @media screen and (max-width: 1100px) {
+        .search-bar{
+            display: none;
+        }
+      }
+      /*, #runningpro1,#totalsales2 ,#activeusers,#bandwidth*/
+      @media screen and (min-width: 1560px) {
+        #first,
+        #second,
+        #third,#fourth{
+          /* background-color: blue; */
+          width: 23.5%;
+        
+        }
+        #runningpro1,#totalsales2{
+          width: 48.8%;
+        }
+        #activeusers,#bandwidth{
+          width: 20%;
+        }
+        #s52{
+          width: 55%;
+        }
+        #bandwidth{
+          order:3;
+        }
+        #activeusers{
+          order:1;
+        }
+        #s52{
+         order:2;
+        }
+
+
+     
+      }
+      table {
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toggle-button" id="toggle-button">
+      &#9776;
+      <!-- Hamburger icon -->
+    </div>
+
+    <div class="container">
+      <nav id="navbar">
+        <ul class="nav-links" id="nav-links">
+          <li>
+            <a href="index.html"
+              ><i class="fa-regular fa-calendar-days"></i><span>Home</span></a
+            >
+          </li>
+          <li>
+            <a href="chat2.html"><i class="fas fa-comments"></i></i><span>Chat</span></a>
+          </li>
+          <li>
+            <a href="social.html"><i class="fa-solid fa-share-nodes"></i><span>Social</span></a>
+          </li>
+          <li>
+            <a href="ecommerce2.html"><i class="fa-solid fa-cart-shopping"></i><span>Contact</span></a>
+          </li>
+        </ul>
+      </nav>
+
+
+      <div class="top-nav">
+        <div class="logo-container">
+          <img
+            src="https://prium.github.io/falcon/v3.22.0/assets/img/icons/spot-illustrations/falcon.png"
+            alt="Falcon Logo"
+          />
+          <h1 style ="color: #2c7be5; font-size: 20px;font-weight: 800;">falcon</h1>
+        </div>
+
+      
+        <div class="search-bar" style="border: none; outline: none;">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search..." />
+        </div>
+
+    
+        <div class="top-nav-icons">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-bell"></i>
+        
+           <span>
+          <a class="nav-link fa-icon-wait nine-dots p-1" id="navbarDropdownMenu" role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="43" viewBox="0 0 16 16" fill="none">
+            <circle cx="2" cy="2" r="2" fill="#6C6E71"></circle>
+            <circle cx="2" cy="8" r="2" fill="#6C6E71"></circle>
+            <circle cx="2" cy="14" r="2" fill="#6C6E71"></circle>
+            <circle cx="8" cy="8" r="2" fill="#6C6E71"></circle>
+            <circle cx="8" cy="14" r="2" fill="#6C6E71"></circle>
+            <circle cx="14" cy="8" r="2" fill="#6C6E71"></circle>
+            <circle cx="14" cy="14" r="2" fill="#6C6E71"></circle>
+            <circle cx="8" cy="2" r="2" fill="#6C6E71"></circle>
+            <circle cx="14" cy="2" r="2" fill="#6C6E71"></circle>
+          </svg></a>
+        </span>
+          
+           &nbsp; &nbsp; &nbsp;
+          <div class="profile-img" >
+          
+            <select name="" id="dropdownpro">
+              <option value="">Edit profile</option>
+              <option value="">Logout</option>
+            </select>
+          </div><br>
+          
+       
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="main-content">
+        <div id="section1">
+          <div id="first">
+            <h6>Weekly Sales</h6>
+
+            <div id="row">
+              <div id="col1">
+                <h1 style="margin-bottom: 10px">$47K</h1>
+                <span class="greenbutton">+3.5%</span>
+              </div>
+              <div id="col2">
+                <img src="images/11.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div id="second">
+            <h6>Total Order</h6>
+
+            <div id="row">
+              <div id="col1">
+                <h1 style="margin-bottom: 10px">58.4K</h1>
+                <span class="bluebutton">+13.6%</span>
+              </div>
+              <div id="col2">
+                <img src="images/12.png" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div id="third">
+            <div id="row">
+              <div id="col1">
+                <h5>Market Share</h5>
+                <br>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><h5>samsung&nbsp;&nbsp;</h5></td>
+                    <td><h5>33%</h5></td>
+                  </tr>
+                  <tr>
+                    <td><h5>Hauwei&nbsp;&nbsp;</h5></td>
+                    <td><h5>29%</h5></td> 
+                  </tr>
+                  <tr>
+                    <td><h5>Apple&nbsp;&nbsp;</h5></td>
+                    <td><h5>20%</h5></td>
+                  </tr>
+                </table>
+              </div>
+              <div id="col2">
+                <img src="images/13.png" alt="" width="80%" />
+              </div>
+            </div>
+          </div>
+           <div id="fourth">
+            <h6>Weather</h6>
+
+            <div id="row" >
+              <div id="col1"  >
+                <!-- <div id="col11" width="20%">
+                    <img src="images/141.png" alt="" width="20%" />
+                </div> -->
+                <div id="col12"  >
+                    <h5>New York City</h5>
+                    <br>
+                    <h6 style="color: orangered;">Sunny</h6>
+                    <h6>Precipitatation:50%</h6>
+                </div>
+                  
+                </div>
+                <div id="col2"  >
+                    <h1 style="color:skyblue">31 <sup>o</sup></h1>
+                  <h5>32 <sup>o</sup>/25 <sup>o</sup></h5>
+                   </div>
+              </div>
+              
+            </div>
+          </div> 
+          <div id="section2">
+            <div id="runningpro1">
+                
+              <div style="overflow: auto; text-wrap: wrap; "> 
+        <table id="v" style="width:100%" >
+        <tr id="r" >
+        <th id="r" style="width:70%; text-align: left;" >Running Projects</th>
+        <th id="r"><select name="" id="" style="padding: 2px; border:2px solid  rgba(237, 242, 249, 0.96) ;">
+        <option value="">Working Time</option>
+        <option value="">Estimated Time</option>
+        <option value="">Billable Time</option>
+          </select></th> 
+     
+   
+         </tr>
+
+        <tr id="r">
+      <td id="r"> <div class="round" id="f1">F</div> &nbsp;Falcon <span id="blueanime">38%</span></td>
+      <td id="r">12:50:00 
+        <!-- <div class="w3-green" style="height:24px;width:25% ;background-color: rgb(144, 161, 238);display: inline;"></div> -->
+       </td>
+     
+    </tr>
+    <tr id="r">
+      <td id="r"> <div class="round" id="r1">R</div> &nbsp;Reign <span id="blueanime">79%</span></td>
+      <td id="r">25:20:00</td>
+     
+    </tr>
+    <tr id="r">
+      <td id="r"> <div class="round" id="b1">B</div> &nbsp;Boots4<span id="blueanime">90%</span></td>
+      <td id="r">12:50:00</td>
+      
+    </tr>
+    <tr id="r">
+        <td id="r"> <div class="round" id="r2">R</div> &nbsp;Raven<span id="blueanime">40%</span></td>
+        <td id="r">25:20:00</td>
+        
+      </tr>
+      <tr id="r">
+        <td id="r" > <div class="round" id="s1">S</div> &nbsp;Slick<span id="blueanime">70%</span></td>
+        <td id="r">12:50:00</td>
+      </tr>
+        
+        
+      
+     </table>
+    </div> 
+  
+   
+    
+     <div id="bottom1">
+      <a href="" id="showpro">Show all Projects ></a>  
+   </div>
+    
+            </div>
+            
+            <div id="totalsales2"">
+                <table id="v" style="width:100%" >
+                    <tr id="r" >
+                      <th id="r" style="width:70%; text-align: left;" >Total Sales</th>
+                      <th id="r"><select name="" id="" style="padding: 2px; border:2px solid  rgba(237, 242, 249, 0.96) ;">
+                        <option value="">January</option>
+                        <option value="">February</option>
+                        <option value="">March</option>
+                      </select></th> 
+                     
+                   
+                    </tr>
+                </table>
+                <img src="images/22.png" alt="" width="100%" height="80%">
+            </div>
+        </div>
+
+        <div id="section4">
+           
+                <div id="activeusers">
+                       <div id="ac" style="display: flex; justify-content: space-between;">
+                        <div><h4>Active Users</h4></div>
+                        <div ><h5><i class="fa-solid fa-ellipsis"></i></h5></div>
+                       </div>
+                       <div id="activeuserdetails">
+                         <!-- <div id="au1"  style="display: flex; justify-content: space-around;"> -->
+                            <!-- <div id="p1" >
+                                <img src="images/p1.jpg" alt="" width="25%">
+
+                            </div> -->
+                            <div style="overflow: auto; text-wrap: wrap; height: 40vh;">
+                            <table width="100%">
+                                <tr align="left">
+                                    <td width="20%"><img src="images/p1.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                                    <td  width="70% "><h5 >Emma Watson</h5>
+                                        <h6>Admin</h6></td>
+                                </tr>
+                                <tr align="left">
+                                    <td width="20%"><img src="images/p2.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                                    <td  width="70% "><h5>Antony Hopkins</h5>
+                                        <h6>Admin</h6></td>
+                                </tr>
+                                <tr align="left">
+                                    <td width="20%"><img src="images/p3.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                                    <td  width="70% "><h5>Emma Watson</h5>
+                                        <h6>Admin</h6></td>
+                                </tr>
+                                <tr align="left">
+                                    <td width="20%"><img src="images/p4.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                                    <td  width="70% "><h5>John Lee</h5>
+                                        <h6>Admin</h6></td>
+                                </tr>
+                                 <tr align="left"></tr>
+                                    <td width="20%"><img src="images/p5.jpg" alt="" width="50%" style="border-radius: 50%;"></td>
+                                    <td  width="70% "><h5>Rowen Atkinson</h5>
+                                        <h6>Admin</h6></td>
+                                </tr> 
+
+                            </table>
+                          </div>
+                            
+                           
+
+                        
+                       </div>
+                      
+                       <div id="bottom1">
+                        <div>
+                          <a href=""  id="allact">All active users ></a>
+                        </div>
+                       
+                       </div>
+                      
+
+                 </div>
+                 
+                 <div id="bandwidth">
+                      <div id="ac" style="display: flex; justify-content: space-between;">
+                        <div><h4>Bandwidth Saved</h4></div>
+                        <div ><h5><i class="fa-solid fa-ellipsis"></i></h5></div>
+                       </div>
+                       <br>
+                       <br>
+                       <center>
+                        <img src="images/bandwidth.png" alt="" width="35%">
+                        <h4>35.75 GB saved</h4>
+                        <h5>38.44 GB total bandwidth</h5>
+                       </center>
+                     <br>
+                     <br>
+                     <div id="bottom2">
+                      <div  style="display: flex; justify-content: space-between;">
+
+                        <div><select name="" id="" style="padding: 2px; border:2px solid  rgba(237, 242, 249, 0.96) ;">
+                            <option value="">Last 6 months </option>
+                            <option value="">Last Year</option>
+                            <option value="">Last 2 Year</option>
+                              </select></div>
+                        <div ><a href="" id="help">Help</a></div>
+                       </div>
+                     </div>
+                     
+  
+                 </div>
+                 <div id="s52">
+                  <div id="totalbargraph" style="display: flex; justify-content: space-between;padding: 10px;">
+                      <div id="prod"><h4>Top Products</h4></div>
+                      <div id="prod"><h5><a href="" id="vd">View Details</a>&nbsp; <i class="fa-solid fa-ellipsis"></i></h5></div>
+                     
+                   </div>
+                   <hr>
+                   <br>
+                   <div id="imagecon">
+                    <img src="images/topproducts.png" alt="" width="100%">
+        
+                   </div>
+                  
+                  </div>
+                
+            
+             
+            </div>
+
+
+
+
+
+
+        <!-- <div id="section5">
+        <div id="s52">
+            <div id="totalbargraph" style="display: flex; justify-content: space-between;padding: 10px;">
+                <div id="prod"><h4>Top Products</h4></div>
+                <div id="prod"><h5><a href="" id="vd">View Details</a>&nbsp; <i class="fa-solid fa-ellipsis"></i></h5></div>
+               
+             </div>
+             <hr>
+             <br>
+             <div id="imagecon">
+              <img src="images/topproducts.png" alt="" width="100%">
+  
+             </div>
+            
+        </div>
+         
+        </div> -->
+        
+        </div>
+        
+       
+      </div>
+     
+      
+    
+   
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Navigation</title>
+    <!-- FontAwesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;  
+      }
+      #section0{
+        padding: 15px;
+        width: 97%;
+        background-color: white;
+        border-radius: 7px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+       
+      }
+      #section1{
+        margin-top: 10px;
+        padding: 15px;
+        width: 97%;
+        background-color: white;
+        border-radius: 7px;
+      }
+      #id1 {
+        padding: 10px;
+        border: 1px solid rgb(239, 235, 235);
+        width: 30%;
+        border-radius: 7px;
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        /* height: 40vh; */
+       
+        /* margin: 1%; */
+      }
+      #a {
+        color: rgba(248, 128, 62, 1);
+      }
+      #im {
+        height: 7em;
+      }
+
+      #im1 {
+        height: 7em;
+        /* background-color: rgb(245, 242, 242); */
+      }
+      #price {
+        color: rgba(248, 128, 62, 1);
+      }
+      .success {
+        color: rgb(56, 172, 56);
+      }
+      #icon{
+        border: 1px solid grey;
+        padding: 3px 6px;
+        border-radius:5px ;
+        margin: 2px;
+
+      }
+      #starsicons1{
+        /* background-color: aqua; */
+        position: absolute;
+        bottom: 8px; 
+        
+    
+      }
+      #icon:hover{
+        cursor: pointer;
+      }
+      /* #starsicons1{
+        
+        padding: 10px;
+        display:flex;
+        justify-content: space-between;
+        
+      } */
+      /* #section1 {
+        display: flex;
+        width:70%;
+        height: 70vh;
+    
+      
+        border-radius: 5px;
+      } */
+      
+     
+      
+  
+ 
+/*     
+      @media screen and (max-width: 770px) {
+      #id1{
+        width:90%
+      }
+        .search-bar{
+            display: none;
+         }
+      }  */
+      @media screen and (max-width: 1100px) {
+        .search-bar{
+            display: none;
+        }
+      }
+      
+      @media screen and (min-width: 771px  ) and (max-width: 940px) {
+      #id1{
+        width:40%
+      }
+    
+     
+      } 
+      @media screen and (max-width: 770px) {
+      #id1{
+        width:90%
+      }
+        .search-bar{
+            display: none;
+         }
+      } 
+      @media screen and (min-width: 940px) {
+      #id1{
+        width:27%
+      }
+    }
+      /* table {
+        border: none;
+      } */
+
+    </style>
+  </head>
+  <body>
+ 
+    <div class="toggle-button" id="toggle-button">
+      &#9776;
+      <!-- Hamburger icon -->
+    </div>
+
+    <div class="container">
+      <nav id="navbar">
+        <ul class="nav-links" id="nav-links">
+          <li>
+            <a href="index.html"
+              ><i class="fa-regular fa-calendar-days"></i><span>Home</span></a
+            >
+          </li>
+          <li>
+            <a href="chat2.html"><i class="fas fa-comments"></i></i><span>Chat</span></a>
+          </li>
+          <li>
+            <a href="social.html"><i class="fa-solid fa-share-nodes"></i><span>Social</span></a>
+          </li>
+          <li>
+            <a href="ecommerce2.html"><i class="fa-solid fa-cart-shopping"></i><span>Contact</span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="top-nav">
+        <div class="logo-container">
+          <img
+            src="https://prium.github.io/falcon/v3.22.0/assets/img/icons/spot-illustrations/falcon.png"
+            alt="Falcon Logo"
+          />
+          <h1 style ="color: #2c7be5; font-size: 20px;font-weight: 800;">falcon</h1>
+        </div>
+    
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search..." />
+        </div>
+
+        <div class="top-nav-icons">
+          <i class="fas fa-sun"></i>
+          
+          <i class="fas fa-shopping-cart"></i>
+         
+          <i class="fas fa-bell"></i>
+          
+           <span>
+          <a class="nav-link fa-icon-wait nine-dots p-1" id="navbarDropdownMenu" role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="43" viewBox="0 0 16 16" fill="none">
+            <circle cx="2" cy="2" r="2" fill="#6C6E71"></circle>
+            <circle cx="2" cy="8" r="2" fill="#6C6E71"></circle>
+            <circle cx="2" cy="14" r="2" fill="#6C6E71"></circle>
+            <circle cx="8" cy="8" r="2" fill="#6C6E71"></circle>
+            <circle cx="8" cy="14" r="2" fill="#6C6E71"></circle>
+            <circle cx="14" cy="8" r="2" fill="#6C6E71"></circle>
+            <circle cx="14" cy="14" r="2" fill="#6C6E71"></circle>
+            <circle cx="8" cy="2" r="2" fill="#6C6E71"></circle>
+            <circle cx="14" cy="2" r="2" fill="#6C6E71"></circle>
+          </svg></a>
+        </span>
+         
+           &nbsp; &nbsp; &nbsp;
+          <div class="profile-img"></div>
+          
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="main-content">
+        <div id="section0">
+          <div id="showproducts">
+            <h4>Showing 1-24 of 205 Products</h4>
+          </div>
+          <div id="dropdownlist">
+          <span>Sort by:</span>
+          <select name="" id="">
+            <option value="">Best Match</option>
+            <option value="">Newest</option>
+            <option value="">Price</option>
+          </select>
+          <i class="fa-solid fa-list"></i>
+          </div>
+        </div>
+        <div id="section1" >
+            <div id="items"></div>
+            <script>
+              console.log("fetch api task");
+              //this fetch method will return promise (promise return value and error)
+              //fetch returns promise
+              function fetchData() {
+                fetch(" https://fakestoreapi.com/products")
+                  .then((res) => res.json()) //json object to the javascript object
+                  .then((data) => {
+                    console.log(data);
+                    displayData(data);
+                  })
+                  .catch((error) => {
+                    console.error(
+                      "There was a problem with the fetch operation:",
+                      error
+                    );
+                  })
+                  .finally(() => {
+                    console.log("completed");
+                  });
+              }
+              fetchData();
+        
+              function displayData(data) {
+                const container = document.getElementById("items");
+                container.innerHTML = "";
+                let divHTML = "";
+        
+                data.forEach((item) => {
+                  divHTML += `
+                 
+               <div id='id1'>
+                     <center>
+                      <div id="im1">
+                         <img src='${item.image}' alt="img" id="im"  width="35%">
+                      </div>
+                      </center>
+                      <br>
+        
+                <h4>${item.title}</h4>
+                <p>${item.category}</p>
+                 <br>
+                <h4 id="price"> <strong>$${item.price}</strong></h4>
+                
+                <br>
+                <p >Shipping Cost:<b>$${Math.floor(item.price % 10)}</b></p>
+                <br>
+                
+                 <p >Stock: <strong class="success">${Math.floor(item.price % 10>5)?"Avaialable":"Not Available"}</strong></p>
+                 <br>
+
+                
+                <div id="starsicons1"  style="display: flex; justify-content: space-between;  width:90%;">
+                  <div id="stars">
+                    <i id="a" class="fa-solid fa-star"></i><i id="a" class="fa-solid fa-star"></i><i id="a" class="fa-solid fa-star"></i><i id="a" class="fa-solid fa-star"></i>
+                   </div>
+                
+                  <div id="icons"  >
+                  <span id="icon">
+                  <i class="fa-regular fa-heart"></i> 
+                   </span>
+                   <span id="icon">
+                    <i class="fa-solid fa-cart-plus"></i>
+                    </span>
+                </div>
+               </div>
+              
+                 
+             
+               
+               
+                 </div>
+                `;
+                });
+        
+                container.innerHTML = divHTML;
+              }
+            </script>
+
+    
+        </div> 
+
+        
+        </div>
+        
+       
+      </div>
+     
+      
+    
+   
+
+    <script src="script.js"></script>
+  </body>
+</html>
